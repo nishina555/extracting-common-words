@@ -1,0 +1,48 @@
+複数のファイルで共通している単語を取り出すためのプログラム。
+出力は単語の出現頻度が高い順にソートされます。
+また、その単語が各ファイルにおいてどのランクに位置していたかも出力します。
+
+入力のファイル形式
+[ランキング ※単語の出現割合 単語]
+0 128 私
+1 96 地震
+2 92 情報
+3 64 俺
+※出現割合=単語の出現頻度×1万/そのファイルの単語の総数
+
+出力ファイル形式
+[単語の出現割合の総和 単語 ランク(ファイル1) ランク(ファイル2)・・・]
+234 私 0 0
+221 自分 7 1
+220 情報 3 5
+
+
+ファイル内で新たに定義するもの
+file_number.いくつファイルを読みこませるか。(最低2)
+
+
+入力形式
+common_word_all.py < file1 file2 file3・・・
+file1はsysで読み込ませ、それ以降はargv[1],argv[2]というように読み込ませていく
+
+
+
+
+
+This program extracts words which common with multiple file.
+Output is descending-order plus display word ranking in eanch file.
+
+input file format
+[ranking parcentage_of_word word]
+
+parcentage_of_word=counts_of_word*myriad/the total words counts in the file
+
+output file format
+[the_total_parcentage_of_word word ranking(file1) ranking(file2) ... ]
+
+definition variable in the program
+file_number. the number of files you use (at least 2)
+
+input format
+common_word_all.py < file1 file2 file3 ....
+file1 is sys, afterwards argv[i]
